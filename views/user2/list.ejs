@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>list user</title>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    </head>
+    <body>
+        <a href="/create-user" >Create new user</a>
+        <div class="my-table">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Username</td>
+                        <td>Phone</td>
+                        <td>Email</td>
+                        <td>City</td>
+                        <td>Edit</td>
+                    </tr>
+                </thead>
+                <tbody>            
+                    <%if(users && users.length > 0 ){
+                        for(let i in users){%>
+                            <tr>
+                                <td><%=users[i].username%></td>
+                                <td><%=users[i].phone%></td>
+                                <td><%=users[i].email%></td>
+                                <td><%=users[i].city%></td>
+                                <td><a href="/edit/user/<%=users[i].id%>">Edit</a></td>
+                            </tr>
+                        <%}
+                    }%>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

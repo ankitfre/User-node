@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>user update</title>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    </head>
+    <body>
+        <h3>update user <%=user.username%></h3>
+        <div class="custom-box">
+            <div>
+                <ul class="nav-list">
+                    <li>
+                        <a href="/" >List user</a>
+                    </li>
+                    <li>
+                        <a href="/create-user" >Create new user</a>
+                    </li>
+                </ul>
+                <%if(typeof errors !== "undefined"){%>
+                    <div class="form-error-1"><%
+                        for(let i in errors){%>
+                            <span><%=errors[i]%></span>
+                        <%}%>
+                    </div>
+                <%}%>
+                <form action="/edit/user/<%=user.id%>/" method="post" class="my-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input
+                            type="text"
+                            name="username"
+                            id="username"
+                            placeholder="Enter username"
+                            class="form-control"
+                            value=<%=user.username%>
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input
+                            type="text"
+                            name="email"
+                            id="email"
+                            placeholder="Enter email"
+                            class="form-control"
+                            value=<%=user.email%>
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input
+                            type="text"
+                            name="phone"
+                            id="phone"
+                            placeholder="Enter phone"
+                            class="form-control"
+                            value=<%=user.phone%>
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input
+                            type="text"
+                            name="city"
+                            id="city"
+                            placeholder="Enter city"
+                            class="form-control"
+                            value=<%=user.city%>
+                        />
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
